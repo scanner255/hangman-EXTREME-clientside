@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="gameBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WordGuessingClientController">
+   <top>
+      <HBox fx:id="categoryChooseBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="animalCategoryChoiceBtn" mnemonicParsing="false" onAction="#categoryChoiceAnimal" text="Animal" />
+            <Button fx:id="fruitCategoryChoiceBtn" mnemonicParsing="false" onAction="#categoryChoiceFruit" text="Fruit" />
+            <Button fx:id="countryCategoryChoiceBtn" mnemonicParsing="false" onAction="#categoryChoiceCountry" text="Country" />
+         </children>
+      </HBox>
+   </top>
+   
+   <center>
+      <VBox fx:id="userChoiceVbox" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER" alignment="CENTER">
+         <children>
+            <TextField fx:id="userInput" alignment="CENTER" promptText="Enter a single lowercase letter" />
+            <Button fx:id="guessBtn" alignment="CENTER" onAction="#guess" prefHeight="26.0" prefWidth="600.0" text="Guess" disable="true" />
+            <TextField fx:id="output" alignment="CENTER" editable="false" text="Output" />
+            <TextField fx:id="NumGuessesText" alignment="CENTER" editable="false" text="Num Guesses:" />
+            <TextField fx:id="CategoriesCompleted" alignment="CENTER" editable="false" text="Categories Completed:" />
+            <TextField fx:id="failedAttempts" alignment="CENTER" editable="false" text="Failed Attempts:" />
+            <TextField fx:id="result" alignment="CENTER" editable="false" text="Result:"/>
+         </children>
+      </VBox>
+   </center>
+   
+   <bottom>
+      <HBox fx:id="restartOrExitHBox" prefHeight="100.0" prefWidth="200.0" alignment="CENTER" BorderPane.alignment="CENTER" >
+      	<children>
+      		<Button fx:id="restartBtn" alignment="CENTER" onAction="#restart" text="Restart" />
+      		<Button fx:id="exitBtn" alignment="CENTER" onAction="#exit" text="Exit" />
+      	</children>
+      </HBox>
+   </bottom>
+</BorderPane>
